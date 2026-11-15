@@ -25,7 +25,8 @@
  * Every reference number is a placeholder from public nutrition knowledge: verify before real use. Not medical advice.
  */
 const http = require('http'), fs = require('fs'), path = require('path'), os = require('os'), { spawn } = require('child_process');
-const PORT = +process.env.PORT || 3000, HOST = process.env.HOST || '127.0.0.1';
+// Change '127.0.0.1' to '0.0.0.0'
+const PORT = +process.env.PORT || 3000, HOST = process.env.HOST || '0.0.0.0';
 const LOOPBACK = ['127.0.0.1', 'localhost', '::1'].includes(HOST);     // when bound to loopback, only loopback Host headers are served (blocks DNS rebinding)
 const HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', HOST.toLowerCase(), ...String(process.env.ALLOWED_HOSTS || '').toLowerCase().split(',').filter(Boolean)]);
 const DB_FILE = process.env.DB_FILE || path.join(__dirname, 'crew_health.db');
