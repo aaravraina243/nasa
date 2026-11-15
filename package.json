@@ -1,0 +1,15 @@
+{
+  "name": "crew-health",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Personal crew health tracker with Bayesian symptom analysis and a spaceflight layer (single-file Node backend, JSX frontend, single SQLite file)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "demo": "node server.js --demo", "test": "node test.js" },
+  "engines": { "node": ">=18" },
+  "optionalDependencies": {
+    "better-sqlite3": "^13.0.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@babel/standalone": "7.26.4"
+  }
+}
