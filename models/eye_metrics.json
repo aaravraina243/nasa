@@ -1,0 +1,202 @@
+{
+  "created": "2026-11-14 03:03:48",
+  "backbone": "convnext_tiny",
+  "image_size": 320,
+  "ensemble_models": 5,
+  "tta": true,
+  "pseudo_mode": "negative",
+  "threshold": 3.466064453125,
+  "probability_slope": 2.65,
+  "probability_scale": 3.048170148812574,
+  "rule": "flag as papilledema when the ensemble score >= threshold (chosen for >= 90% sensitivity on out-of-fold predictions)",
+  "images": {
+    "total": 5476,
+    "clean_originals": 1369,
+    "augmented_copies": 4107,
+    "development": 4692,
+    "test": 784,
+    "evaluation_images_development": 1173,
+    "evaluation_images_test": 196,
+    "original_photos": 1369,
+    "max_copies_per_photo": 4,
+    "test_original_photos": 196,
+    "by_class": {
+      "Normal": 3116,
+      "Papilledema": 1180,
+      "Pseudopapilledema": 1180
+    }
+  },
+  "cross_validation": {
+    "fold_auroc": [
+      1.0,
+      0.9997837837837837,
+      0.9998934356351236,
+      1.0,
+      1.0
+    ],
+    "mean_auroc": 0.9999354438837814,
+    "std_auroc": 8.63341824659117e-05
+  },
+  "test_set": {
+    "n_images": 196,
+    "n_papilledema": 42,
+    "n_not_papilledema": 154,
+    "auroc": 1.0,
+    "avg_precision": 1.0,
+    "sensitivity": 0.8809523809523809,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "negative_predictive_value": 0.9685534591194969,
+    "accuracy": 0.9744897959183674,
+    "balanced_accuracy": 0.9404761904761905,
+    "confusion": {
+      "true_negative": 154,
+      "false_alarm": 0,
+      "missed_papilledema": 5,
+      "true_papilledema": 37
+    },
+    "brier_score": 0.0496117506057594,
+    "share_flagged_by_class": {
+      "Normal": {
+        "n": 112,
+        "flagged_as_papilledema": 0.0
+      },
+      "Papilledema": {
+        "n": 42,
+        "flagged_as_papilledema": 0.8809523809523809
+      },
+      "Pseudopapilledema": {
+        "n": 42,
+        "flagged_as_papilledema": 0.0
+      }
+    },
+    "auroc_95ci": [
+      0.9999999999999999,
+      1.0
+    ],
+    "sensitivity_95ci": [
+      0.7851190476190476,
+      0.9761904761904762
+    ],
+    "specificity_95ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "test_set_augmented_copies": {
+    "n_images": 588,
+    "n_papilledema": 126,
+    "n_not_papilledema": 462,
+    "auroc": 1.0,
+    "avg_precision": 0.9999999999999998,
+    "sensitivity": 0.9126984126984127,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "negative_predictive_value": 0.9767441860465116,
+    "accuracy": 0.9812925170068028,
+    "balanced_accuracy": 0.9563492063492063,
+    "confusion": {
+      "true_negative": 462,
+      "false_alarm": 0,
+      "missed_papilledema": 11,
+      "true_papilledema": 115
+    },
+    "brier_score": 0.049346218782721926,
+    "share_flagged_by_class": {
+      "Normal": {
+        "n": 336,
+        "flagged_as_papilledema": 0.0
+      },
+      "Papilledema": {
+        "n": 126,
+        "flagged_as_papilledema": 0.9126984126984127
+      },
+      "Pseudopapilledema": {
+        "n": 126,
+        "flagged_as_papilledema": 0.0
+      }
+    },
+    "auroc_95ci": [
+      0.9999999999999999,
+      1.0
+    ],
+    "sensitivity_95ci": [
+      0.8253968253968254,
+      0.9841269841269841
+    ],
+    "specificity_95ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "out_of_fold_development_set": {
+    "n_images": 1173,
+    "n_papilledema": 253,
+    "n_not_papilledema": 920,
+    "auroc": 0.9996219281663515,
+    "avg_precision": 0.9986167489922536,
+    "sensitivity": 0.9011857707509882,
+    "specificity": 0.9989130434782608,
+    "precision": 0.9956331877729258,
+    "negative_predictive_value": 0.9735169491525424,
+    "accuracy": 0.9778346121057119,
+    "balanced_accuracy": 0.9500494071146245,
+    "confusion": {
+      "true_negative": 919,
+      "false_alarm": 1,
+      "missed_papilledema": 25,
+      "true_papilledema": 228
+    },
+    "brier_score": 0.04992890554406338,
+    "share_flagged_by_class": {
+      "Normal": {
+        "n": 667,
+        "flagged_as_papilledema": 0.0
+      },
+      "Papilledema": {
+        "n": 253,
+        "flagged_as_papilledema": 0.9011857707509882
+      },
+      "Pseudopapilledema": {
+        "n": 253,
+        "flagged_as_papilledema": 0.003952569169960474
+      }
+    }
+  },
+  "robustness_test_set": {
+    "clean": {
+      "auroc": 1.0,
+      "sensitivity": 0.8809523809523809,
+      "specificity": 1.0
+    },
+    "blurred": {
+      "auroc": 0.9998453927025356,
+      "sensitivity": 0.9047619047619048,
+      "specificity": 1.0
+    },
+    "darker": {
+      "auroc": 1.0,
+      "sensitivity": 0.9285714285714286,
+      "specificity": 1.0
+    },
+    "brighter": {
+      "auroc": 1.0,
+      "sensitivity": 0.8571428571428571,
+      "specificity": 1.0
+    },
+    "low_contrast": {
+      "auroc": 1.0,
+      "sensitivity": 0.9047619047619048,
+      "specificity": 1.0
+    }
+  },
+  "notes": [
+    "'test_set' is the fair estimate: those images (and all their augmented copies) were never used for training, early stopping, the threshold or the calibration.",
+    "'out_of_fold_development_set' is slightly optimistic because the threshold was tuned on it.",
+    "Small test sets give wide error bars - see the 95% confidence intervals.",
+    "Evaluation (validation, out-of-fold, test) uses the CLEAN original photos whenever they were loaded; augmented copies are used for training only. 'test_set_augmented_copies' shows the same test photos in their noisy/blurred/rotated versions.",
+    "All images come from one data set (probably one hospital/camera). Results on photos from a different camera or clinic can be worse; test on an external set before trusting the model.",
+    "Photos of the same patient (e.g. left and right eye) are different original photos and can land in different splits; without patient IDs this cannot be prevented.",
+    "The probability is a calibrated risk indicator for THIS data set; it has not been clinically validated."
+  ]
+}
